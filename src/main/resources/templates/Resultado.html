@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Resultado de la Búsqueda</h1>
+    <div th:if="${vehiculo != null}">
+        <p>Placa: <span th:text="${vehiculo.placa}"></span></p>
+        <p>Marca: <span th:text="${vehiculo.marca}"></span></p>
+        <p>Modelo: <span th:text="${vehiculo.modelo}"></span></p>
+        <p>Número de Asientos: <span th:text="${vehiculo.numero}"></span></p>
+        <p>Precio: <span th:text="${vehiculo.precio}"></span></p>
+        <p>Color: <span th:text="${vehiculo.color}"></span></p>
+    </div>
+    <div th:if="${vehiculo == null}">
+        <p>No se encontró el vehículo.</p>
+    </div>
+    <a href="/form">Buscar otro vehículo</a>
+</div>
+</body>
+</html>
